@@ -35,3 +35,4 @@ build/
 # Ignore env.properties file
 **/env.properties
 /src/main/tailwind/node_modules/
+.DS_Store
