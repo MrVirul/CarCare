@@ -28,7 +28,7 @@ WORKDIR /app
 ARG JAR_FILE=target/CarCare-0.0.1-SNAPSHOT.jar
 
 # Copy the JAR from the builder stage
-COPY --from=builder /app/${JAR_FILE} app.jar
+COPY --from=builder /app/target/*.jar app.jar
 
 # Expose the default Spring Boot port
 EXPOSE 8080
