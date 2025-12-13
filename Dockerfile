@@ -1,8 +1,6 @@
 # Stage 1: Build
 FROM eclipse-temurin:21-jdk AS builder
 
-ENV ARTIFACT_NAME=CarCare-0.0.1-SNAPSHOT.jar
-
 WORKDIR /app
 
 COPY mvnw .
@@ -24,4 +22,4 @@ COPY --from=builder /app/target/*.jar app.jar
 
 EXPOSE 8080
 
-CMD ["java", "-jar", "app.jar"]
+CMD ["java", "-XX:MaxRAMPercentage=75.0", "-jar", "app.jar"]
